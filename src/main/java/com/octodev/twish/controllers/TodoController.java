@@ -47,14 +47,14 @@ public class TodoController {
       @RequestParam(defaultValue = "3") int size) {
 
     Pageable paging = PageRequest.of(page, size);
-    Page<Todo> pageProducts = service.findAll(paging);
-    List<Todo> products = pageProducts.getContent();
+    Page<Todo> pageTodos = service.findAll(paging);
+    List<Todo> todos = pageTodos.getContent();
 
     Map<String, Object> response = new HashMap<>();
-    response.put("products", products);
-    response.put("currentPage", pageProducts.getNumber());
-    response.put("totalItems", pageProducts.getTotalElements());
-    response.put("totalPages", pageProducts.getTotalPages());
+    response.put("todos", todos);
+    response.put("currentPage", pageTodos.getNumber());
+    response.put("totalItems", pageTodos.getTotalElements());
+    response.put("totalPages", pageTodos.getTotalPages());
 
     return ResponseEntity.ok().body(response);
   }
