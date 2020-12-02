@@ -1,6 +1,6 @@
 package com.octodev.twish.models;
 
-public enum Erole {
+public enum ERole {
   ROLE_USER,
   ROLE_ADMIN
 }
